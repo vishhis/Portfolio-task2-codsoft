@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <label for="password-length">Password Length:</label>
+        <input type="numberdiv" id="password-length" min="8" max="20" value="12">
+        <br>
+        <label for="include-uppercase">Include Uppercase:</label>
+        <input type="checkbox" id="include-uppercase" checked>
+        <br>
+        <label for="include-lowercase">Include Lowercase:</label>
+        <input type="checkbox" id="include-lowercase" checked>
+        <br>
+        <label for="include-numbers">Include Numbers:</label>
+        <input type="checkbox" id="include-numbers" checked>
+        <br>
+        <label for="include-symbols">Include Symbols:</label>
+        <input type="checkbox" id="include-symbols">
+        <br>
+        <button onclick="generatePassword()">Generate Password</button>
+        <br>
+        <input type="text" id="password" readonly>
+    </div>
+    <style>
+        body{
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+            }body
+.container {
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+    function generatePassword() {
+        const length = document.getElementById("password-length").value;
+        const includeUppercase = document.getElementById("include-uppercase").checked;
+        const includeLowercase = document.getElementById("include-lowercase").checked;
+        const includeNumbers = document.getElementById("include-numbers").checked;
+        const includeSymbols = document.getElementById("include-symbols").checked;
+    
+        const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+        const numberChars = "0123456789";
+        const symbolChars = "!@#$%^&*()_-+=<>?/";
+    
+        let allChars = "";
+        let password = "";
+    
+        if (includeUppercase) allChars += uppercaseChars;
+        if (includeLowercase) allChars += lowercaseChars;
+        if (includeNumbers) allChars += numberChars;
+        if (includeSymbols) allChars += symbolChars;
+    
+        if (allChars === "") {
+            alert("Please select at least one character type.");
+            return;
+        }
+    
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * allChars.length);
+            password += allChars.charAt(randomIndex);
+        }
+    
+        document.getElementById("password").value = password;
+    }
+    function generatePassword() {
+    const length = prompt("Enter the desired length of the password (between 8 and 20):");
+
+    // Check if the input is a valid number between 8 and 20
+    if (isNaN(length) || length < 8 || length > 20) {
+        alert("Please enter a valid number between 8 and 20.");
+        return;
+    }
+
+    const includeUppercase = document.getElementById("include-uppercase").checked;
+    const includeLowercase = document.getElementById("include-lowercase").checked;
+    const includeNumbers = document.getElementById("include-numbers").checked;
+    const includeSymbols = document.getElementById("include-symbols").checked;
+
+    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+    const numberChars = "0123456789";
+    const symbolChars = "!@#$%^&*()_-+=<>?/";
+
+    let allChars = "";
+    let password = "";
+
+    if (includeUppercase) allChars += uppercaseChars;
+    if (includeLowercase) allChars += lowercaseChars;
+    if (includeNumbers) allChars += numberChars;
+    if (includeSymbols) allChars += symbolChars;
+
+    if (allChars === "") {
+        alert("Please select at least one character type.");
+        return;
+    }
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * allChars.length);
+        password += allChars.charAt(randomIndex);
+    }
+
+    document.getElementById("password").value = password;
+}
+function generatePassword() {
+    const length = prompt("Enter the desired length of the password (between 8 and 20):");
+
+    // Check if the input is a valid number between 8 and 20
+    if (isNaN(length) || length < 8 || length > 20) {
+        alert("Please enter a valid number between 8 and 20.");
+        return;
+    }
+
+    const includeUppercase = document.getElementById("include-uppercase").checked;
+    const includeLowercase = document.getElementById("include-lowercase").checked;
+    const includeNumbers = document.getElementById("include-numbers").checked;
+    const includeSymbols = document.getElementById("include-symbols").checked;
+
+    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+    const numberChars = "0123456789";
+    const symbolChars = "!@#$%^&*()_-+=<>?/";
+
+    let allChars = "";
+    let password = "";
+
+    if (includeUppercase) allChars += uppercaseChars;
+    if (includeLowercase) allChars += lowercaseChars;
+    if (includeNumbers) allChars += numberChars;
+    if (includeSymbols) allChars += symbolChars;
+
+    if (allChars === "") {
+        alert("Please select at least one character type.");
+        return;
+    }
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * allChars.length);
+        password += allChars.charAt(randomIndex);
+    }
+
+    document.getElementById("password").value = password;
+}
+    for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * allChars.length);
+    password += allChars.charAt(randomIndex);
+}
+ </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
